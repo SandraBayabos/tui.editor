@@ -205,10 +205,11 @@ export class TableOffsetMap {
   getCellIndex(cellPos: ResolvedPos): [rowIdx: number, colIdx: number] {
     for (let rowIdx = 0; rowIdx < this.totalRowCount; rowIdx += 1) {
       const rowInfo = this.rowInfo[rowIdx];
-
-      for (let colIdx = 0; colIdx < this.totalColumnCount; colIdx += 1) {
-        if (rowInfo[colIdx].offset + 1 > cellPos.pos) {
-          return [rowIdx, colIdx];
+      if (rowInfo){
+        for (let colIdx = 0; colIdx < this.totalColumnCount; colIdx += 1) {
+          if (rowInfo[colIdx].offset + 1 > cellPos.pos) {
+            return [rowIdx, colIdx];
+          }
         }
       }
     }
