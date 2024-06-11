@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@sandrabayabos/tui.editor",
   "private": false,
   "devDependencies": {
     "@babel/core": "^7.8.3",
